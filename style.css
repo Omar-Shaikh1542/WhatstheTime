@@ -7,7 +7,6 @@
 body{
     overflow: hidden;
     /* background-color:black; */
-    background: linear-gradient(to bottom right, #070738, rgb(7, 7, 46) ), #0c0c33;
 }
 ol, ul{
     list-style: none;
@@ -18,12 +17,16 @@ ol, ul{
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background: linear-gradient(to bottom right, #083961, #021627 ), #000000; */
+
+    background: linear-gradient(to bottom right, #e6ebf0, #525a63), #ced4da;
+    /* background: linear-gradient(to bottom right, #070738, rgb(7, 7, 46) ), #0c0c33; */
     
 }
 .clock-frame{
     padding: 18%;
     border-radius: 50%;
-    background-color: #a52a2aa2;
+    background-color: #52153ad8;
     box-shadow: 10px -15px 25px rgba(0, 0, 0, 0),
                 inset 10px -15px 25px rgba(0,0, 0),
                 -10px 15px 25px rgba(0, 0, 0, 0),
@@ -132,15 +135,6 @@ ol, ul{
         font-size: 10px;
     }
 }
-.clock-second{
-    position: relative;
-    z-index: 0;
-    border-radius: 50%;
-   
-    
-    aanimation: secondmove 60s linear infinite;
-    background: linear-gradient(to bottom right, #14103a, #02022b ), #0c0c33;
-}
 .clock-number{
     padding: 15%;
     position: absolute;
@@ -149,7 +143,7 @@ ol, ul{
     /* background:  #c5c5d1; */
     
     transform: translate(0%, 0%);
-
+    
 }
 @media screen and (max-width: 1650px){
     .clock-hand{
@@ -189,13 +183,17 @@ ol, ul{
         /* text-emphasis: none;; */
     }
 }
+
 .clock-second{
-    position: relative;
+    position: absolute;
     z-index: 0;
     border-radius: 50%;
-   
 
-    background: linear-gradient(to bottom right, #14103a, #02022b ), #0c0c33;
+    background: linear-gradient(to bottom right, #699cc5, #0f2841 ), #000000;
+
+    /* background: linear-gradient(to bottom right, #e6ebf0, #525a63), #ced4da; */
+
+    /* background: linear-gradient(to bottom right, #083961, #021627 ), #000000; */
 }
 .clock-pointer-second{
     padding: 2.5%;
@@ -278,7 +276,7 @@ ol, ul{
     color: #d9e8e9;
     font-size: 22px;
     font-weight: 600;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ; */
     /* transform: rotate(var(--rotation)); */
     /* justify-content: ; */
 
@@ -304,12 +302,23 @@ ol, ul{
     left: 0%;
 }
 
-/* .change-button{
-    padding: 15%;
-    background-color: #fcfdfd;
+.change-button{
+    margin: %;
+    padding: 2%;
+    background-color: #fcfdfd0a;
+    right: 40%;
+    margin: 5%;
     height: 15%;
-    width: 45%;
-} */
+    position: relative;
+}
+.ball{
+    margin: 1%;
+    padding: 25%; 
+    /* width: 100%; */
+    /* height: 100%; */
+    /* position: absolute; */
+    background-color: #21e9ad;
+}
 /* =========================================== */
 
 @-webkit-keyframes secondmove{
