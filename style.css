@@ -5,8 +5,12 @@
     border: none;
 }
 body{
+    /* display: inline-flex; */
     overflow: hidden;
     /* background-color:black; */
+    background: linear-gradient(to bottom right, #c5cfda, #31353b), #ced4da;
+    /* background: linear-gradient(to bottom right, #083961, #021627 ), #000000; */
+    /* background: linear-gradient(to bottom right, #070738, rgb(7, 7, 46) ), #0c0c33; */
 }
 ol, ul{
     list-style: none;
@@ -17,10 +21,7 @@ ol, ul{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background: linear-gradient(to bottom right, #083961, #021627 ), #000000; */
-
-    background: linear-gradient(to bottom right, #e6ebf0, #525a63), #ced4da;
-    /* background: linear-gradient(to bottom right, #070738, rgb(7, 7, 46) ), #0c0c33; */
+    /* display: none; */
     
 }
 .clock-frame{
@@ -116,10 +117,10 @@ ol, ul{
 .clock-hand{
     padding: 16.5%;
  /* display: none; */
-  box-shadow: 10px -15px 25px rgba(0, 0, 0, 0),
-                inset 10px -15px 25px rgba(0,0, 0),
-                -10px 15px 25px rgba(0, 0, 0, 0),
-                inset -10px 15px 25px rgba(0, 0, 0);
+  box-shadow: 0px -5px 20px rgba(0, 0, 0, 0),
+                inset 0px -5px 20px rgba(0,0, 0),
+                -0px 5px 20px rgba(0, 0, 0, 0),
+                inset -0px 5px 20px rgba(0, 0, 0);
    
 
 } 
@@ -186,11 +187,22 @@ ol, ul{
 
 .clock-second{
     position: absolute;
+    z-index: 1;
+    border-radius: 50%;
+
+    /* background: linear-gradient(to bottom right, #4e7596, #0f2841 ), #00000000; */
+    /* background-color: #6c757c; */
+    /* background: linear-gradient(to bottom right, #e6ebf0, #525a63), #ced4da; */
+
+    /* background: linear-gradient(to bottom right, #083961, #021627 ), #000000; */
+}
+.clock-surface{
+    position: absolute;
     z-index: 0;
     border-radius: 50%;
 
-    background: linear-gradient(to bottom right, #699cc5, #0f2841 ), #000000;
-
+    background: linear-gradient(to bottom right, #4e7596, #0f2841 ), #000000;
+    /* background-color: #6c757c; */
     /* background: linear-gradient(to bottom right, #e6ebf0, #525a63), #ced4da; */
 
     /* background: linear-gradient(to bottom right, #083961, #021627 ), #000000; */
@@ -218,7 +230,7 @@ ol, ul{
     width: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-bottom: 30px solid  rgba(226, 230, 25, 0.849);
+    border-bottom: 40px solid  rgba(226, 230, 25, 0.849);
     z-index: 2;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -245,28 +257,29 @@ ol, ul{
 
 }
 .clock-point-hor{
-    padding: 0.2px;
-    width: 15px;
+    padding: 1px;
+    width: 25px;
     position: absolute;
     z-index: 1;
     /* border-radius: 50%; */
-    /* display: none; */
-    background-color: #104058;
+    background-color: #010f0f;
     /* animation: hourmove 43200s linear infinite; */
     /* animation-duration: s; */
 }
 .clock-point-vert{
-    padding: 8px;
-    height: 15px;
+    padding: 1px;
+    height: 25px;
     position: absolute;
     z-index: 1;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     /* display: none; */
-    background-color: #fcfdfd;
+    background-color: #010f0f;
     /* animation: hourmove 43200s linear infinite; */
     /* animation-duration: s; */
 }
-
+.cross {
+    animation: 10s crossmove linear infinite;
+}
 .value{
     /* --rotation: 0; */
     transform: translate(-50% , -50%);
@@ -279,7 +292,7 @@ ol, ul{
     /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ; */
     /* transform: rotate(var(--rotation)); */
     /* justify-content: ; */
-
+    /* display: none; */
 }
 .value-12{
     transform: translate(-50% , -50%);
@@ -303,23 +316,58 @@ ol, ul{
 }
 
 .change-button{
-    margin: %;
+    /* margin: 1%; */
     padding: 2%;
-    background-color: #fcfdfd0a;
+    background-color: #07011be3;
     right: 40%;
-    margin: 5%;
-    height: 15%;
+    /* border-top-right-radius: 50%; */
+    /* border-bottom-left-radius: 50%; */
+    /* border-bottom-right-radius: 50%; */
+    /* margin: 5%; */
+    /* width: 5%; */
+    height: 25%;
     position: relative;
 }
 .ball{
-    margin: 1%;
-    padding: 25%; 
+    /* margin: 1%; */
+    padding: 50%;
+    height: 50%;
+    /* bottom: 0; */
+    bottom: 25%;
+    /* transform-origin:; */
+    /* border-radius: 50%; */
+    transform: translate(-50%, -50%); 
     /* width: 100%; */
     /* height: 100%; */
-    /* position: absolute; */
-    background-color: #21e9ad;
+    position: absolute;
+    background-color: hsl(240, 65%, 87%);
+}
+.ball:hover{
+    animation: 1s buttondown linear;
+}
+/* =================analog==================== */
+.analog {
+    position: absolute;
+    
 }
 /* =========================================== */
+
+@-webkit-keyframes crossmove{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes buttondown{
+    0%{
+        bottom: 25%
+    }
+    100%{
+        bottom: -25%;
+    }
+}
 
 @-webkit-keyframes secondmove{
     0%{
