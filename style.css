@@ -120,7 +120,7 @@ ol, ul{
    
 
 } 
-@media screen and (max-width: 520px){
+@media screen and (max-width: 1000px){
     .clock-hand{
         padding: 20%;
     }
@@ -137,8 +137,64 @@ ol, ul{
     z-index: 0;
     border-radius: 50%;
    
-
+    
     aanimation: secondmove 60s linear infinite;
+    background: linear-gradient(to bottom right, #14103a, #02022b ), #0c0c33;
+}
+.clock-number{
+    padding: 15%;
+    position: absolute;
+    z-index: 10;
+    border-radius: 50%;
+    /* background:  #c5c5d1; */
+    
+    transform: translate(0%, 0%);
+
+}
+@media screen and (max-width: 1650px){
+    .clock-hand{
+        padding: 24%;
+    }
+    .clock-frame{
+        padding: 26%;
+    }
+    .clock-number{
+        padding: 22%;
+        font-size: 30px;
+    }
+    
+}
+@media screen and (max-width: 850px){
+    .clock-hand{
+        padding: 28%;
+    }
+    .clock-frame{
+        padding: 30%;
+    }
+    .clock-number{
+        padding: 25%;
+        font-size: 1px;
+    }
+}
+@media screen and (max-width: 550px){
+    .clock-hand{
+        padding: 32%;
+    }
+    .clock-frame{
+        padding: 35%;
+    }
+    .clock-number{
+        padding: 28%;
+        font-size: 12px;
+        /* text-emphasis: none;; */
+    }
+}
+.clock-second{
+    position: relative;
+    z-index: 0;
+    border-radius: 50%;
+   
+
     background: linear-gradient(to bottom right, #14103a, #02022b ), #0c0c33;
 }
 .clock-pointer-second{
@@ -158,14 +214,13 @@ ol, ul{
     border-radius: 50%;
 
     background: linear-gradient(to bottom right, #0c0c49, rgb(7, 7, 46) ), #0c0c33;
-    aanimation: minutemove 3600s linear infinite;
 }
 .clock-pointer-minute{
     height: 0;
     width: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-bottom: 22px solid  rgba(226, 230, 25, 0.849);
+    border-bottom: 30px solid  rgba(226, 230, 25, 0.849);
     z-index: 2;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -177,7 +232,6 @@ ol, ul{
     z-index: 0;
     border-radius: 50%;
     background: linear-gradient(to bottom right, #0c0c49, rgb(4, 4, 37) ), #0c0c33;
-    aanimation: hourmove 43200s linear infinite;
     /* animation-duration: s; */
 }
 .clock-pointer-hour{
@@ -214,16 +268,6 @@ ol, ul{
     /* animation: hourmove 43200s linear infinite; */
     /* animation-duration: s; */
 }
-.clock-number{
-    padding: 15%;
-    position: absolute;
-    z-index: 10;
-    border-radius: 50%;
-    /* background:  #c5c5d1; */
-    
-    transform: translate(0%, 0%);
-
-}
 
 .value{
     /* --rotation: 0; */
@@ -232,7 +276,7 @@ ol, ul{
     display: flex;
     text-align: center;
     color: #d9e8e9;
-    font-size: large;
+    font-size: 22px;
     font-weight: 600;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
     /* transform: rotate(var(--rotation)); */
@@ -242,24 +286,30 @@ ol, ul{
 .value-12{
     transform: translate(-50% , -50%);
 
-    top: 4%;
+    top: 1%;
 }
 .value-3{
     transform: translate(50% , -50%);
 
-    right: 3%;
+    right: 0%;
 }
 .value-6{
     transform: translate(-50% , 50%);
 
-    bottom: 3%;
+    bottom: 0%;
 }
 .value-9{
     transform: translate(-50% , -50%);
 
-    left: 3%;
+    left: 0%;
 }
 
+/* .change-button{
+    padding: 15%;
+    background-color: #fcfdfd;
+    height: 15%;
+    width: 45%;
+} */
 /* =========================================== */
 
 @-webkit-keyframes secondmove{
