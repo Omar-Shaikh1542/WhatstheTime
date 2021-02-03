@@ -2,85 +2,105 @@
 <html>
     <head>
         <title>Whats The Time</title>
-
+        
         <meta name ="viewport" content ="width=device-width, initial-scale=1">
-
+        
         <!-- bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+        
         <!-- css link -->
         <link rel = "stylesheet" type = "text/css" href = "style.css">
-
+        
         <!-- jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+        
     </head>
     <body>
-        <div class = "clock">
+        <header class = switch-button>
+           
+            <button class = "btn btn-lg btn-dark switch " id = "analog-switch">Analog</button>
+            <button class = "btn btn-lg btn-dark switch " id = "digital-switch">Digital</button>
+        
+        </header>
+        
+        <div class = "clock" id = "analog-clock">
             <div class = "clock-frame">
-                <!-- <div class = "clock-number"> -->
-                    <div class = "num-12"></div>
-                    <div class = "num-1-7"></div>
-                    <div class = "num-2-8"></div>
-                    <div class = "num-3"></div>
-                    <div class = "num-4-10"></div>
-                    <div class = "num-5-11"></div>
-                    <div class = "num-9"></div>
-                <!-- </div> -->
+                <div class = "num-12"></div>
+                <div class = "num-1-7"></div>
+                <div class = "num-2-8"></div>
+                <div class = "num-3"></div>
+                <div class = "num-4-10"></div>
+                <div class = "num-5-11"></div>
+                <div class = "num-9"></div>
             </div>
             <div class = "clock-number">
                 <div class = " value value-12">XII</div>
                 <div class = " value value-3">III</div>
                 <div class = " value value-6">VI</div>
                 <div class = " value value-9">IX</div>
-
-
             </div>
             <div class = "clock-hand clock-hour" id = "clock-hour">
-                <div class = "clock-pointer-hour">
-                    
+                <div class = "clock-pointer-hour">   
                 </div>
             </div>
             <div class = "clock-hand clock-minute" id = "clock-minute">
-                <div class = "clock-pointer-minute">
-                    
+                <div class = "clock-pointer-minute">        
                 </div>
             </div>
             <div class = "clock-hand clock-second" id = "clock-second">
                 <div class = "clock-pointer-second">
-                    
                 </div>
             </div>
-            <div class = "clock-hand clock-surface">
-                
-            </div>
-            <div class = "cross clock-point-hor">
-                
-            </div>
-            <div class = " cross clock-point-vert">
-                
-            </div>
-
-            <!-------------------- analog clock ----------------->
-
-            <div class = "analog">
-                <div class = "block-box">
-                    <div class = "block block-hour"></div>
-                    <div class = "block block-minute"></div>
-                    <div class = "block block-second"></div>
-                    <div class = "block block-date">
-                        <div class = "date block-day"></div>
-                        <div class = "date block-month"></div>
-
-                    </div>
-                </div>
-            </div>
-            <!-------------------- switch button ---------------->
-            <!-- <div class = "change-button">
-                <button class = "ball"></button>
-            </div> -->
+            <div class = "clock-hand clock-surface"></div>
+            <div class = "cross clock-point-hor"></div>
+            <div class = " cross clock-point-vert"></div>
             
         </div>
+        
+        <!-------------------- analog clock ----------------->
+        
+        <div class = "digital-clock" id = "digital-clock">
+            <div class = "digital-top">
+                
+                <div class = "block-box">
+                    <div class = "block block-hour">
+
+                            <h1 id = "digital-hour">12
+                    </div>
+                    <div class = "block block-minute">
+
+                            <h1 id = "digital-minute">06</h1>
+                    </div>
+                    <div class = "block block-second">
+
+                            <h1 id = "digital-second">32</h1>
+                    </div>
+                    <div class = "block block-date">
+                        <div class = "date block-day">
+
+                                <h5 id = "digital-day">5</h5>
+                        </div>
+                        <div class = "date block-month">
+                           
+                                <h5 id = "digital-month">Jan</h5>
+                                
+                        
+                            
+                        </div>    
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        <!-------------------- switch button ---------------->
+        
+        
+        
+        
+        
         <script type = "text/javascript" src = "index.js"></script>
     </body>
-</html>
+    </html>
