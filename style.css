@@ -1,0 +1,288 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+}
+body{
+    overflow: hidden;
+    /* background-color:black; */
+    background: linear-gradient(to bottom right, #070738, rgb(7, 7, 46) ), #0c0c33;
+}
+ol, ul{
+    list-style: none;
+}
+.clock{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.clock-frame{
+    padding: 18%;
+    border-radius: 50%;
+    background-color: #a52a2aa2;
+    box-shadow: 10px -15px 25px rgba(0, 0, 0, 0),
+                inset 10px -15px 25px rgba(0,0, 0),
+                -10px 15px 25px rgba(0, 0, 0, 0),
+                inset -10px 15px 25px rgba(0, 0, 0);
+    /* display: none; */
+    position: absolute;
+}
+.num-12{
+   
+    padding: 2px;
+    position: absolute;
+    
+    height: 100%;
+    top: 0%;
+    left: 50%; 
+    transform: translate(-50%) rotate(0deg);
+    background-color: rgb(211, 219, 211);
+
+
+}
+
+.num-3{
+    padding: 2px;
+    position: absolute;
+    
+    height: 100%;
+    top: 0%;
+    left: 50%; 
+    transform: translate(-50%) rotate(90deg);
+    background-color: rgb(211, 219, 211);
+
+}
+.num-1-7{
+    padding: 0.6px;
+    position: absolute;
+    
+    height: 100%;
+    top: 0%;
+    left: 50%; 
+    transform: rotate(30deg);
+    background-color: rgb(211, 219, 211);
+}
+.num-4-10{
+    padding: 0.6px;
+    position: absolute;
+    
+    height: 100%;
+    top: 0%;
+    left: 50%; 
+    transform: rotate(-60deg);
+    background-color: rgb(211, 219, 211);
+}
+.num-5-11{
+    padding: 0.6px;
+    position: absolute;
+    
+    height: 100%;
+    top: 0%;
+    left: 50%; 
+    transform: rotate(-30deg);
+    background-color: rgb(211, 219, 211);
+}
+
+.num-2-8{
+    padding: 0.6px;
+    /* border-radius: 50%; */
+    position: absolute;
+    /* transform: translate(50%, 50%); */
+    
+    height: 100%;
+    top: 0%;
+    left: 50%; 
+    transform: rotate(60deg);
+    background-color: rgb(211, 219, 211);
+}
+.num-9{
+    padding: 5.5px;
+    position: absolute;
+    
+    height: 50%;
+    top: 0%;
+    left: 50%; 
+    transform: translate(-50%) rotate(0deg);
+    background-color: rgb(211, 219, 211);
+
+}
+.clock-hand{
+    padding: 16.5%;
+ /* display: none; */
+  box-shadow: 10px -15px 25px rgba(0, 0, 0, 0),
+                inset 10px -15px 25px rgba(0,0, 0),
+                -10px 15px 25px rgba(0, 0, 0, 0),
+                inset -10px 15px 25px rgba(0, 0, 0);
+   
+
+} 
+@media screen and (max-width: 520px){
+    .clock-hand{
+        padding: 20%;
+    }
+    .clock-frame{
+        padding: 22%;
+    }
+    .clock-number{
+        padding: 16%;
+        font-size: 10px;
+    }
+}
+.clock-second{
+    position: relative;
+    z-index: 0;
+    border-radius: 50%;
+   
+
+    aanimation: secondmove 60s linear infinite;
+    background: linear-gradient(to bottom right, #14103a, #02022b ), #0c0c33;
+}
+.clock-pointer-second{
+    padding: 2.5%;
+    border-radius: 50%;
+    
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 0%;
+  
+    background-color: rgb(43, 99, 43);
+    
+}
+.clock-minute{
+    position: absolute;
+    z-index: 0;
+    border-radius: 50%;
+
+    background: linear-gradient(to bottom right, #0c0c49, rgb(7, 7, 46) ), #0c0c33;
+    aanimation: minutemove 3600s linear infinite;
+}
+.clock-pointer-minute{
+    height: 0;
+    width: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 22px solid  rgba(226, 230, 25, 0.849);
+    z-index: 2;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 0%;
+    
+}
+.clock-hour{
+    position: absolute;
+    z-index: 0;
+    border-radius: 50%;
+    background: linear-gradient(to bottom right, #0c0c49, rgb(4, 4, 37) ), #0c0c33;
+    aanimation: hourmove 43200s linear infinite;
+    /* animation-duration: s; */
+}
+.clock-pointer-hour{
+    height: 0;
+    width: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 50px solid  rgba(230, 25, 25, 0.849);
+    /* z-index: 2; */
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 0%;
+
+}
+.clock-point-hor{
+    padding: 0.2px;
+    width: 15px;
+    position: absolute;
+    z-index: 1;
+    /* border-radius: 50%; */
+    /* display: none; */
+    background-color: #104058;
+    /* animation: hourmove 43200s linear infinite; */
+    /* animation-duration: s; */
+}
+.clock-point-vert{
+    padding: 8px;
+    height: 15px;
+    position: absolute;
+    z-index: 1;
+    border-radius: 50%;
+    /* display: none; */
+    background-color: #fcfdfd;
+    /* animation: hourmove 43200s linear infinite; */
+    /* animation-duration: s; */
+}
+.clock-number{
+    padding: 15%;
+    position: absolute;
+    z-index: 10;
+    border-radius: 50%;
+    /* background:  #c5c5d1; */
+    
+    transform: translate(0%, 0%);
+
+}
+
+.value{
+    /* --rotation: 0; */
+    transform: translate(-50% , -50%);
+    position: absolute;
+    display: flex;
+    text-align: center;
+    color: #d9e8e9;
+    font-size: large;
+    font-weight: 600;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    /* transform: rotate(var(--rotation)); */
+    /* justify-content: ; */
+
+}
+.value-12{
+    transform: translate(-50% , -50%);
+
+    top: 4%;
+}
+.value-3{
+    transform: translate(50% , -50%);
+
+    right: 3%;
+}
+.value-6{
+    transform: translate(-50% , 50%);
+
+    bottom: 3%;
+}
+.value-9{
+    transform: translate(-50% , -50%);
+
+    left: 3%;
+}
+
+/* =========================================== */
+
+@-webkit-keyframes secondmove{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes minutemove{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes hourmove{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
